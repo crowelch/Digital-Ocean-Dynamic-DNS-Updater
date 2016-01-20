@@ -34,7 +34,16 @@ The php script has been designed to be called as a command line tool. Config is 
 
     php updater.php accessToken domain record
     
-    python updater.py accessToken domain record
+    python3 updater.py
+    
+    updater.py reads in a config.json file in the same directory which looks like this:
+    
+    {
+	    "token": "yoursupersecretdigitaloceanaccesstoken",
+	    "domain": "the root domain",
+	    "record": "the a record you want to update"
+    }
+
     
 were 'accessToken' is your ['Personal Access Token'](https://cloud.digitalocean.com/settings/applications), 'domain' is the domain name you want to update (e.g:
 joebloggs.com) and 'record' is the value of the a-record you want to update (e.g: home).
