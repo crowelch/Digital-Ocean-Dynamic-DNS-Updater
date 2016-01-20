@@ -6,19 +6,16 @@
 import json, re
 import urllib.request
 from datetime import datetime
-import argparse
 
-#Parse the command line arguments (all required or else exception will be thrown)
-parser = argparse.ArgumentParser()
-parser.add_argument("token")
-parser.add_argument("domain")
-parser.add_argument("record")
-args = parser.parse_args()
+
+# Read access token from config.txt
+f = open('config.json', 'r')
+data = json.load(f)
 
 #assign the parsed args to their respective variables
-TOKEN = args.token
-DOMAIN = args.domain
-RECORD = args.record
+TOKEN = data['token']
+DOMAIN = data['domain']
+RECORD = data['record']
 
 CHECKIP = "http://checkip.dyndns.org:8245/"
 APIURL = "https://api.digitalocean.com/v2"
